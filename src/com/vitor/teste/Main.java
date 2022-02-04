@@ -15,16 +15,16 @@ public class Main {
         System.out.println(date3.data);
         System.out.println(date4.data);
         System.out.println(date5.data);
-    
+        
         System.out.println("\n");
         
         //Teste 2, array de strings
         String[] array = new String[]{"CARLOS", "EDUARDO", "DA", "COSTA", "XAVIER"};
         StringParser string = new StringParser(array);
         System.out.println(string.parsedArray);
-
+        
         System.out.println("\n");
-
+        
         //Teste 3, array de ints
         int[] arrayInt = new int[]{334,568,123,796,225};
         int[] arrayInt2 = new int[]{335214,56548,125613,75496,225, 1, 1685, 9, 0, 15};

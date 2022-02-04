@@ -7,7 +7,7 @@ public class DataParser {
         char[] parts = data.toCharArray();
         boolean allDigits = true, dateBR = false;
         StringBuilder cleanData = new StringBuilder();
-    
+        
         for(int i = 0; i < parts.length; i++) {
             if (Character.isDigit(parts[i])) {
                 cleanData.append(parts[i]);
@@ -27,7 +27,7 @@ public class DataParser {
         if(allDigits) {
             this.data = isAllDigits(cleanData);
         }
-    
+        
         // Caso a data inserida esteja em dd-MM-yyyy
         if(dateBR) {
             this.data = isBR(cleanData);
@@ -38,10 +38,10 @@ public class DataParser {
             cleanData.delete(7,9);
             this.data = cleanData.toString();
         }
-    
+        
     }
     
-    //Organiza uma data composta por digitos no formato
+    //Organiza uma data composta por digitos no formato ddMMyyyy
     private String isAllDigits(StringBuilder cleanData) {
         cleanData.delete(0, 2);
         String newData = cleanData.substring(0, 2);
@@ -50,7 +50,7 @@ public class DataParser {
         cleanData.insert(4, '-');
         return cleanData.toString();
     }
-    
+    //Organiza uma data formato dd/mm/yyyy
     private String isBR(StringBuilder cleanData) {
         cleanData.delete(0, 2);
         String newData = cleanData.substring(0, 2);
@@ -59,5 +59,4 @@ public class DataParser {
         cleanData.insert(4, '-');
         return cleanData.toString();
     }
-    
 }
